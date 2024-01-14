@@ -1,0 +1,80 @@
+@media (max-width: 414px){
+    .img-cont{
+        display: flex;
+        flex-direction: column;
+    }
+    .img-cont img{
+     width: 100%;   
+    }
+    .blue{
+        height: 60vh;
+    }
+     .blue-left{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .blue-left input{
+        width: 100%;
+        border-radius:5px ;
+        padding: 15px;
+    }
+    .blue-left button{
+        width: 100%;
+        border-radius:5px ;
+        padding: 15px;
+    }
+    .blue-left span{
+        display: none;
+    } 
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+    .blue2{ 
+        height: 60vh;
+    }
+    .blue2-div div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .blue2-div p{
+  text-align: center; 
+    }
+    .blue2-btn{
+      width: 80%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .blue2-btn2{
+        width: 80%;
+        background-color: #6697fa;
+        text-align: center;
+    }
+    .left{
+        padding: 0;
+        width: 100%;
+    }
+    .myfoot div input {
+        width: 70%;
+    }
+    .right{
+        width:100%;
+        display: flex;
+       flex-wrap: wrap;
+       gap: 30px; 
+    }
+   footer{
+    padding-bottom: 30px;
+   }
+   .ppp{
+    margin-right: 235px;
+   }
+   footer .last{
+ margin: 0%;
+padding-left: 40px;
+   }
+} 
