@@ -1,0 +1,70 @@
+//first step : npm init to create my own package
+//second : npm i mongoose to install mongoose and use it to connect with database easily
+//third require the mongoose in the main and all the routes/models/controllers i should require
+//connection with database
+const mongoose = require('mongoose');
+//create the server and it's port 
+const express= require('express');
+const app=express()
+const port=5050
+//require the routes only 
+const userRoute=require('./routes/userRoute')
+const todoRoute=require('./routes/todoRoute')
+//4 : establish a connecection  with database
+mongoose.connect('mongodb://127.0.0.1:27017/crud').then(() => {
+    console.log("connected");
+}).catch(err => {
+    console.log(err);
+})
+
+// some middlewares before routes
+app.use(express.urlencoded({ extended: true }));
+//then the routes
+app.use('/user',userRoute)
+app.use('/todo',todoRoute)
+
+// const userController=require('./controllers/UserController')
+// userController.getAll()
+app.listen(port,() => console.log(`Example app listening on port ${port}!`))
+
+
+
+
+
+
+
+
+
+
+
+//5: create collections of this database i did this step in a separate folder called (models)
+// then i have to require all of them in the main at step 3 
+//6. create controllers of the crud operations i did this step in a separate folder called (controllers)
+// then i have to require all of them in the main at step 3
+//7. let's test the user controllers
+/////////test the register
+// userController.Register("ahmed ali", 123456,"ahmed",23);
+// userController.Register("hany ali", 123456,"hany",25);
+// userController.Register("mohammed ali", 123456,"mohammed",27);
+////////test the login
+// userController.Login("mohammed ali", 123456);
+/////////test the getall 
+// userController.getAllUsers();
+///////////////testt the delete
+// userController.deleteUser(27)
+// userController.getAll()
+////test edit
+// userController.editUser("ahmed",77777)
+// userController.getAll()
+//////////////////////////////////////////////////////////
+//test add to do 
+// todoController.createTodo("hany ali","movies",["aaa","nnn","ooo"])
+// todoController.getAll()
+// test retrive todos a specific user
+// todoController.getTodos("hany")
+//test update todo
+// todoController.editTodo('movies',["9999",'8888','4444'])
+// todoController.getTodos("ahmed")
+/////////test delete
+//todoController.deleteTodo("movies")
+// todoController.getAll()
